@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 function createData(
   name: string,
@@ -34,6 +35,8 @@ export const ActivePlayers = () => {
             <TableCell>Active Players</TableCell>
             <TableCell align="right">First Name</TableCell>
             <TableCell align="right">Last Name</TableCell>
+            <TableCell align="right">Time on Bench</TableCell>
+            <TableCell align="right">Actions</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -47,6 +50,8 @@ export const ActivePlayers = () => {
               </TableCell>
               <TableCell align="right">{row.calories}</TableCell>
               <TableCell align="right">{row.fat}</TableCell>
+              <TableCell></TableCell>
+              <TableCell align='right'><ArrowDownwardIcon /></TableCell>
             </TableRow>
           ))}
         </TableBody>

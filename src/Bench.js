@@ -6,6 +6,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+
 
 function createData(
   name: string,
@@ -34,6 +36,8 @@ export const Bench = () => {
             <TableCell>Bench</TableCell>
             <TableCell align="right">First Name</TableCell>
             <TableCell align="right">Last Name</TableCell>
+            <TableCell align="right">Time on Bench</TableCell>
+            <TableCell align="right">Actions</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -47,6 +51,8 @@ export const Bench = () => {
               </TableCell>
               <TableCell align="right">{row.calories}</TableCell>
               <TableCell align="right">{row.fat}</TableCell>
+              <TableCell></TableCell>
+              <TableCell align='right'><ArrowUpwardIcon /></TableCell>
             </TableRow>
           ))}
         </TableBody>
