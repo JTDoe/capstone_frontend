@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 export const AddPlayerButton = () => {
   return (
     <Stack spacing={2} direction="row">
-      <Button variant="outlined">Outlined</Button>
+      <Button variant="outlined">Add Player</Button>
     </Stack>
   );
 }

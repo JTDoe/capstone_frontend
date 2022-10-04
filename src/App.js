@@ -2,19 +2,22 @@ import "./App.css";
 // import { useState, useEffect } from "react";
 import { ActivePlayers } from "./components/ActivePlayers"
 import { Bench } from "./components/Bench"
-import { AddPlayer } from "./components/AddPlayer"
-import { AddPlayerButton } from "./components/AddPlayerButton"
-
+import { StudentForm } from "./components/AddPlayer"
 
 
 function App() {
   return (
     <>
-<AddPlayer /> <AddPlayerButton />
-<ActivePlayers />
-<Bench />
-</>
-  )
+   
+      <StudentForm />
+      <br></br>
+      {/* <TableData /> */}
+      <ActivePlayers />
+      <br></br>
+      <Bench />
+      
+    </>
+  );
 }
 
 export default App;
