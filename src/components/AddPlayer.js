@@ -1,46 +1,53 @@
-import React, { useState } from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+import React, { useState, useContext } from "react";
+import { GlobalContext } from "../Context/GlobalProvider";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 import "../App.css";
 
-export const StudentForm = (props) => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  
-  const changeFirstName = (event) => {
-    setFirstName(event.target.value);
+export const AddPlayerForm = (props) => {
+  const { player, setPlayer, players, setPlayers } = useContext(GlobalContext);
 
+  const changeFirstName = (event) => {
+    setPlayer({ ...player, firstName: event.target.value });
   };
-  
+
   const changeLastName = (event) => {
-    setLastName(event.target.value);
+    setPlayer({ ...player, lastName: event.target.value });
   };
-  
-  const transferValue = (event) => {
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const val = {
-      firstName,
-      lastName,
-    };
+    setPlayers([...players, player]);
+
     clearState();
   };
-  
+
   const clearState = () => {
-    setFirstName('');
-    setLastName('');
+    setPlayer({ firstName: "", lastName: "", active: false });
   };
-  
+  console.log("players", players);
   return (
-    
-    <div id='addplayer'>
+    <div id="addplayer">
       {/* <label>First Name</label> */}
-      <TextField id="outlined-basic1" placeholder='First Name' value={firstName} onChange={changeFirstName} />
+      <TextField
+        id="outlined-basic1"
+        placeholder="First Name"
+        value={player.firstName}
+        onChange={changeFirstName}
+      />
       {/* <label>Last Name</label> */}
-      <TextField id="outlined-basic2" placeholder='Last Name' value={lastName} onChange={changeLastName} />
-      <Button id="addbutton" variant="outlined" onClick={transferValue}> Add Player </Button>
+      <TextField
+        id="outlined-basic2"
+        placeholder="Last Name"
+        value={player.lastName}
+        onChange={changeLastName}
+      />
+      <Button id="addbutton" variant="outlined" onClick={handleSubmit}>
+        {" "}
+        Add Player{" "}
+      </Button>
     </div>
-    
   );
-}
+};
 
 // export default StudentForm;

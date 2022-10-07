@@ -8,18 +8,8 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
-// import AddPlayer from "./components/AddPlayer"
-
-// function createData(props) {
-
-// }
-
 const rows = [
-  // createData(),
-  // createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  // createData('Eclair', 262, 16.0, 24, 6.0),
-  // createData('Cupcake', 305, 3.7, 67, 4.3),
-  // createData('Gingerbread', 356, 16.0, 49, 3.9),
+
 ];
 
 
@@ -33,7 +23,7 @@ export const ActivePlayers = (props) => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Active Players</TableCell>
+            <TableCell id='activeplayertitle'>Active Players</TableCell>
             <TableCell align="right">First Name</TableCell>
             <TableCell align="right">Last Name</TableCell>
             <TableCell align="right">Time on Bench</TableCell>
@@ -49,8 +39,8 @@ export const ActivePlayers = (props) => {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{}</TableCell>
+              <TableCell align="right">{}</TableCell>
               <TableCell></TableCell>
               <TableCell align='right'><ArrowDownwardIcon /></TableCell>
             </TableRow>

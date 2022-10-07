@@ -3,14 +3,10 @@ display: flex;
 justify-content: center;
 }
 
-div#outlined-basic1 {
-
+#activeplayertitle {
+  font-size: large;
 }
 
-div#outlined-basic2 {
-
-}
-
-div#addbutton {
- 
+#benchplayertitle {
+  font-size: large;
 }
