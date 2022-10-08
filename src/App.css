@@ -1,3 +1,4 @@
+
 div#addplayer {
 display: flex;
 justify-content: center;
@@ -9,4 +10,44 @@ justify-content: center;
 
 #benchplayertitle {
   font-size: large;
+}
+
+#main-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 75px;
+}
+
+#active-player-table {
+  margin-top: 100px;
+  margin-right: 25px;
+  margin-left: 25px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#bench-player-table {
+  margin-top: 100px;
+  margin-right: 25px;
+  margin-left: 25px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#active-player-table > h2 {
+  display: flex;
+  justify-content: center;
+}
+
+#bench-player-table > h2 {
+  display: flex;
+  justify-content: center;
+}
+
+#active-player-table > div > table {
+  background-color: #D3D3D3;
+}
+
+#bench-player-table > div > table {
+  background-color: #D3D3D3;
 }

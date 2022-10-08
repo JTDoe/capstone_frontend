@@ -11,7 +11,7 @@ import { GlobalContext } from "../Context/GlobalProvider";
 import { AddPlayer } from "../components/AddPlayer";
 
 export const Bench = () => {
-  const { player, setPlayer, players, setPlayers } = useContext(GlobalContext);
+  const { players, setPlayers } = useContext(GlobalContext);
   const rows = players.filter((player) => player.active === false);
 
   const handleActive = (name) => {
@@ -19,7 +19,6 @@ export const Bench = () => {
       let newState = prevState.map((player) => {
         if (player.lastName === name) {
           player.active = true;
-          player.timesBenched = player.timesBenched + 1;
         }
         return player;
       });
@@ -32,10 +31,9 @@ export const Bench = () => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell id="benchplayertitle">Bench</TableCell>
             <TableCell align="right">First Name</TableCell>
             <TableCell align="right">Last Name</TableCell>
-            <TableCell align="right">Time on Bench</TableCell>
+            <TableCell align="right">Times Benched</TableCell>
             <TableCell align="right">Actions</TableCell>
           </TableRow>
         </TableHead>
@@ -45,12 +43,9 @@ export const Bench = () => {
               key={row.lastName}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
-                {/* {row.firstName} {row.lastName} */}
-              </TableCell>
               <TableCell align="right">{row.firstName}</TableCell>
               <TableCell align="right">{row.lastName}</TableCell>
-              <TableCell align="right">{}</TableCell>
+              <TableCell align="right">{row.timesBenched}</TableCell>
               <TableCell align="right">
                 <ArrowUpwardIcon onClick={() => handleActive(row.lastName)} />
               </TableCell>

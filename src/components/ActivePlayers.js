@@ -26,6 +26,7 @@ export const ActivePlayers = (props) => {
       let newState = prevState.map((player) => {
         if (player.lastName === name) {
           player.active = false;
+          player.timesBenched = player.timesBenched + 1;
         }
         return player;
       });
@@ -38,10 +39,9 @@ export const ActivePlayers = (props) => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell id="activeplayertitle">Active Players</TableCell>
             <TableCell align="right">First Name</TableCell>
             <TableCell align="right">Last Name</TableCell>
-            <TableCell align="right">Time on Bench</TableCell>
+            <TableCell align="right">Times Benched</TableCell>
             <TableCell align="right">Actions</TableCell>
           </TableRow>
         </TableHead>
@@ -51,10 +51,9 @@ export const ActivePlayers = (props) => {
               key={row.lastName}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell component="th" scope="row"></TableCell>
               <TableCell align="right">{row.firstName}</TableCell>
               <TableCell align="right">{row.lastName}</TableCell>
-              <TableCell></TableCell>
+              <TableCell align="right">{row.timesBenched}</TableCell>
               <TableCell align="right">
                 <ArrowDownwardIcon onClick={() => handleBench(row.lastName)} />
               </TableCell>
