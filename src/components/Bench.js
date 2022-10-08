@@ -14,10 +14,19 @@ export const Bench = () => {
   const { player, setPlayer, players, setPlayers } = useContext(GlobalContext);
   const rows = players.filter((player) => player.active === false);
 
-  const handleBench = (name) => {
-    const foundPlayer = players.find((player) => player.lastName === name);
-    console.log("foundPlayer", foundPlayer);
+  const handleActive = (name) => {
+    setPlayers((prevState) => {
+      let newState = prevState.map((player) => {
+        if (player.lastName === name) {
+          player.active = true;
+          player.timesBenched = player.timesBenched + 1;
+        }
+        return player;
+      });
+      return newState;
+    });
   };
+  console.log("players", players);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -43,7 +52,7 @@ export const Bench = () => {
               <TableCell align="right">{row.lastName}</TableCell>
               <TableCell align="right">{}</TableCell>
               <TableCell align="right">
-                <ArrowUpwardIcon onClick={() => handleBench(row.lastName)} />
+                <ArrowUpwardIcon onClick={() => handleActive(row.lastName)} />
               </TableCell>
             </TableRow>
           ))}

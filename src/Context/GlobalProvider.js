@@ -6,6 +6,7 @@ function GlobalProvider({ children }) {
     firstName: "",
     lastName: "",
     active: false,
+    timesBenched: 0,
   });
   const [players, setPlayers] = useState([]);
 
