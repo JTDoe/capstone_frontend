@@ -23,7 +23,7 @@ export const AddPlayerForm = (props) => {
   };
 
   const clearState = () => {
-    setPlayer({ firstName: "", lastName: "", active: false });
+    setPlayer({ firstName: "", lastName: "", active: false, timesBenched: 0 });
   };
   console.log("players", players);
   return (

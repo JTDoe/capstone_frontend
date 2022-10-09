@@ -9,7 +9,7 @@ import Paper from "@mui/material/Paper";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { GlobalContext } from "../Context/GlobalProvider";
 
-export const ActivePlayers = (props) => {
+export const ActivePlayers = () => {
   const { players, setPlayers } = useContext(GlobalContext);
   const rows = players.filter((player) => player.active === true);
 
@@ -25,8 +25,11 @@ export const ActivePlayers = (props) => {
     setPlayers((prevState) => {
       let newState = prevState.map((player) => {
         if (player.lastName === name) {
-          player.active = false;
-          player.timesBenched = player.timesBenched + 1;
+          return {
+            ...player,
+            active: false,
+            timesBenched: player.timesBenched + 1,
+          };
         }
         return player;
       });

@@ -18,7 +18,8 @@ export const Bench = () => {
     setPlayers((prevState) => {
       let newState = prevState.map((player) => {
         if (player.lastName === name) {
-          player.active = true;
+          return {...player, active: true}
+          // player.active = true;
         }
         return player;
       });

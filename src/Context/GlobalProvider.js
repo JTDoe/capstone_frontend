@@ -9,12 +9,17 @@ function GlobalProvider({ children }) {
     timesBenched: 0,
   });
   const [players, setPlayers] = useState([]);
+  const [user, setUser] = useState('')
+  
+
 
   const value = {
     player,
     setPlayer,
     players,
     setPlayers,
+    user,
+    setUser,
   };
 
   return (
