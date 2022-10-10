@@ -34,7 +34,7 @@ export default function BasicModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Login />
+          <Login handleClose={handleClose} />
           {/* <Typography id="modal-modal-title" variant="h6" component="h2">
             Text in a modal
           </Typography>

@@ -16,18 +16,20 @@ import { GlobalContext } from "../../Context/GlobalProvider";
 
 const theme = createTheme();
 
-export default function SignIn() {
+export default function SignIn({handleClose}) {
   const { user, setUser } = useContext(GlobalContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log('handleSubmit')
+    handleClose()
   };
 
   const handleChange = (event) => {
     setUser(event.target.value);
   };
 
-  console.log("user", user);
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -60,7 +62,7 @@ export default function SignIn() {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label="Last Name"
               name="email"
               autoComplete="email"
               autoFocus
@@ -84,7 +86,6 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-          
             >
               Sign In
             </Button>
