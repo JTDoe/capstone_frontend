@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import axios from "axios";
 import { GlobalContext } from "../Context/GlobalProvider";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -16,11 +17,20 @@ export const AddPlayerForm = (props) => {
     setPlayer({ ...player, lastName: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setPlayers([...players, player]);
-
-    clearState();
+    console.log("working");
+    try {
+      const body = {
+        first_name: player.firstName,
+        last_name: player.lastName,
+      };
+      await axios.post("https://capstone-back-end.vercel.app/players", body);
+      setPlayers([...players, player]);
+      clearState();
+    } catch (error) {
+      console.error("error creating player", error);
+    }
   };
 
   const clearState = () => {
