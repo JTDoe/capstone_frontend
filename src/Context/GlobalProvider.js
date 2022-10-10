@@ -9,9 +9,8 @@ function GlobalProvider({ children }) {
     timesBenched: 0,
   });
   const [players, setPlayers] = useState([]);
-  const [user, setUser] = useState('')
-  
-
+  const [user, setUser] = useState("");
+  const [open, setOpen] = useState(Boolean);
 
   const value = {
     player,
@@ -20,6 +19,8 @@ function GlobalProvider({ children }) {
     setPlayers,
     user,
     setUser,
+    open,
+    setOpen,
   };
 
   return (

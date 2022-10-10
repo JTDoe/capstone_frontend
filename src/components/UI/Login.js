@@ -18,19 +18,17 @@ const theme = createTheme();
 
 export default function SignIn() {
   const { user, setUser } = useContext(GlobalContext);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const data = new FormData(event.currentTarget);
-    // console.log({
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    // });
   };
 
   const handleChange = (event) => {
     setUser(event.target.value);
   };
+
   console.log("user", user);
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -86,19 +84,16 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+          
             >
               Sign In
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+                <Link href="#" variant="body2"></Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
+                <Link href="#" variant="body2"></Link>
               </Grid>
             </Grid>
           </Box>

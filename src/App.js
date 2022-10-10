@@ -1,9 +1,7 @@
 import "./App.css";
-import { useState, useEffect } from "react";
 import { ActivePlayers } from "./components/ActivePlayers";
 import { Bench } from "./components/Bench";
 import { AddPlayerForm } from "./components/AddPlayer";
-// import Login from "./components/UI/Login";
 import Modal from "./components/UI/Modal";
 
 function App() {
@@ -11,7 +9,6 @@ function App() {
     <>
       <Modal />
       <h1 id="main-title">Player Tracker</h1>
-
       <AddPlayerForm />
 
       <br></br>

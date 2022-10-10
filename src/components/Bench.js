@@ -35,7 +35,7 @@ export const Bench = () => {
             <TableCell align="right">First Name</TableCell>
             <TableCell align="right">Last Name</TableCell>
             <TableCell align="right">Times Benched</TableCell>
-            <TableCell align="right">Actions</TableCell>
+            <TableCell align="right">Move to Game</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
