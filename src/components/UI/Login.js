@@ -16,20 +16,18 @@ import { GlobalContext } from "../../Context/GlobalProvider";
 
 const theme = createTheme();
 
-export default function SignIn({handleClose}) {
+export default function SignIn({ handleClose }) {
   const { user, setUser } = useContext(GlobalContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('handleSubmit')
-    handleClose()
+    console.log("handleSubmit");
+    handleClose();
   };
 
   const handleChange = (event) => {
     setUser(event.target.value);
   };
-
-
 
   return (
     <ThemeProvider theme={theme}>

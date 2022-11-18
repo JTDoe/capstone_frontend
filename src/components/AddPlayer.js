@@ -19,7 +19,7 @@ export const AddPlayerForm = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("working");
+
     try {
       const body = {
         first_name: player.firstName,
@@ -40,21 +40,26 @@ export const AddPlayerForm = (props) => {
   return (
     <>
       <div id="addplayer">
-        {/* <label>First Name</label> */}
         <TextField
           id="outlined-basic1"
           placeholder="First Name"
           value={player.firstName}
           onChange={changeFirstName}
         />
-        {/* <label>Last Name</label> */}
+
         <TextField
           id="outlined-basic2"
           placeholder="Last Name"
           value={player.lastName}
           onChange={changeLastName}
         />
-        <Button id="addbutton" variant="outlined" onClick={handleSubmit}>
+
+        <Button
+          type="submit"
+          id="addbutton"
+          variant="outlined"
+          onClick={handleSubmit}
+        >
           {" "}
           Add Player{" "}
         </Button>

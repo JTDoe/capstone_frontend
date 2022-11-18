@@ -3,8 +3,8 @@ import { ActivePlayers } from "./components/ActivePlayers";
 import { Bench } from "./components/Bench";
 import { AddPlayerForm } from "./components/AddPlayer";
 import Modal from "./components/UI/Modal";
-
-function App() {
+import { ScoreKeeper } from "./components/ScoreKeeper"
+function App() { 
   return (
     <>
       <Modal />
@@ -21,6 +21,9 @@ function App() {
         <h2>Benched Players</h2>
         <Bench />
       </div>
+      <div id="scorekeeper">
+    <ScoreKeeper></ScoreKeeper>
+    </div>
     </>
   );
 }

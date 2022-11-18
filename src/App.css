@@ -58,3 +58,9 @@ justify-content: center;
   margin-top: 10px;
   font-family: 'Courier New', Courier, monospace;
 }
+
+#scorekeeper {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}

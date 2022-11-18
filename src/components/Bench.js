@@ -7,8 +7,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
 import { GlobalContext } from "../Context/GlobalProvider";
-
 
 export const Bench = () => {
   const { players, setPlayers } = useContext(GlobalContext);
@@ -18,8 +18,7 @@ export const Bench = () => {
     setPlayers((prevState) => {
       let newState = prevState.map((player) => {
         if (player.lastName === name) {
-          return {...player, active: true}
-          // player.active = true;
+          return { ...player, active: true };
         }
         return player;
       });
@@ -36,6 +35,7 @@ export const Bench = () => {
             <TableCell align="right">Last Name</TableCell>
             <TableCell align="right">Times Benched</TableCell>
             <TableCell align="right">Move to Game</TableCell>
+            <TableCell align="right">Remove</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -49,6 +49,9 @@ export const Bench = () => {
               <TableCell align="right">{row.timesBenched}</TableCell>
               <TableCell align="right">
                 <ArrowUpwardIcon onClick={() => handleActive(row.lastName)} />
+              </TableCell>
+              <TableCell align="right">
+                <PersonRemoveIcon />
               </TableCell>
             </TableRow>
           ))}
