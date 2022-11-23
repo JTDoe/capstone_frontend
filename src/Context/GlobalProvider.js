@@ -11,6 +11,8 @@ function GlobalProvider({ children }) {
   const [players, setPlayers] = useState([]);
   const [user, setUser] = useState("");
   const [open, setOpen] = useState(Boolean);
+  const [visitorScore, setVisitorScore] = useState(0);
+  const [homeScore, setHomeScore] = useState(0);
 
   const value = {
     player,
@@ -21,6 +23,10 @@ function GlobalProvider({ children }) {
     setUser,
     open,
     setOpen,
+    visitorScore,
+    setVisitorScore,
+    homeScore,
+    setHomeScore,
   };
 
   return (
