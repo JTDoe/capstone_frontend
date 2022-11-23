@@ -30,6 +30,12 @@ export const ActivePlayers = () => {
     });
   };
 
+  const removePlayer = (name) => {
+    const rows = [...players]
+    rows.splice(name, 1)
+    setPlayers(rows)
+  }
+
   return (
     <>
       <TableContainer component={Paper}>
@@ -40,7 +46,7 @@ export const ActivePlayers = () => {
               <TableCell align="right">Last Name</TableCell>
               <TableCell align="right">Times Benched</TableCell>
               <TableCell align="right">Move to Bench</TableCell>
-              <TableCell align="right">Remove</TableCell>
+              <TableCell align="right">Remove Player from Game</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -58,7 +64,7 @@ export const ActivePlayers = () => {
                   />
                 </TableCell>
                 <TableCell align="right">
-                  <PersonRemoveIcon />
+                  <PersonRemoveIcon onClick={() => removePlayer(row.lastName)}/>
                 </TableCell>
               </TableRow>
             ))}

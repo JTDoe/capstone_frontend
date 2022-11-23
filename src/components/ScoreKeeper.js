@@ -11,5 +11,5 @@ export const ScoreKeeper = () => {
       <Button variant="contained">Away Increase Score</Button>
       <Button variant="contained">Away Decrease Score</Button>
     </Stack>
-  );
+    );
 }

@@ -26,6 +26,12 @@ export const Bench = () => {
     });
   };
   console.log("players", players);
+
+  const removePlayer = (name) => {
+    const rows = [...players]
+    rows.splice(name, 1)
+    setPlayers(rows)
+  }
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -35,7 +41,7 @@ export const Bench = () => {
             <TableCell align="right">Last Name</TableCell>
             <TableCell align="right">Times Benched</TableCell>
             <TableCell align="right">Move to Game</TableCell>
-            <TableCell align="right">Remove</TableCell>
+            <TableCell align="right">Remove Player from Bench</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -51,7 +57,7 @@ export const Bench = () => {
                 <ArrowUpwardIcon onClick={() => handleActive(row.lastName)} />
               </TableCell>
               <TableCell align="right">
-                <PersonRemoveIcon />
+                <PersonRemoveIcon onClick={() => removePlayer(row.lastName)}/>
               </TableCell>
             </TableRow>
           ))}
