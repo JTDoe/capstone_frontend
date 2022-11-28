@@ -4,14 +4,15 @@ import { GlobalContext } from "../Context/GlobalProvider";
 
 export const ScoreBoard = () => {
 
-  const { visitorScore, setVisitorScore } = useContext(GlobalContext);
-  const { homeScore, setHomeScore } = useContext(GlobalContext);
+  const { visitorScore } = useContext(GlobalContext);
+  const { homeScore } = useContext(GlobalContext);
 
 
   return (
-  <ScoreBoard>
-    <h2>{visitorScore}</h2>
-    <h2>{homeScore}</h2>
-  </ScoreBoard>
+    <>
+    <h2 className='visitorscore'>{visitorScore}</h2>
+  
+    <h2 className='homescore'>{homeScore}</h2>
+</>
     );
 }

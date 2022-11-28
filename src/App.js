@@ -4,6 +4,7 @@ import { Bench } from "./components/Bench";
 import { AddPlayerForm } from "./components/AddPlayer";
 import Modal from "./components/UI/Modal";
 import { ScoreKeeper } from "./components/ScoreKeeper"
+import { ScoreBoard } from './components/ScoreBoard';
 function App() { 
   return (
     <>
@@ -24,6 +25,10 @@ function App() {
       <div id="scorekeeper">
     <ScoreKeeper></ScoreKeeper>
     </div>
+    <div id="scoreboard">
+      <ScoreBoard></ScoreBoard>
+    </div>
+
     </>
   );
 }
